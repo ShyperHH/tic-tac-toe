@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+#field, #fieldRecords{
+    width: 100%;
+    display: none;
+    border: 1px solid black;
+    border-spacing: 0;
+
+}
+#field td, #fieldRecords td{
+    width: 30%;
+    height: 70px;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+#field td:hover{
+    cursor: pointer;
+}
+#fieldRecords{
+    display: none;
+}
+#redirectButton{
+    display: none;
+}
