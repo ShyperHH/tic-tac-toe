@@ -3,7 +3,6 @@ let player1=[];
 let player2=[];
 let numberOfMoves=0;
 let table = document.querySelectorAll("#field td");
-
 function Toggler(value){
     document.getElementById('input_player1').hidden=value;
     document.getElementById('input_player2').hidden=value;
@@ -44,9 +43,11 @@ for(let i=0;i<9;i++){
         if(this.textContent!=="")return;
         this.textContent=document.getElementById("currentPlayer").textContent.slice(-1);
         if(this.textContent===player1[1]){
-            document.getElementById("currentPlayer").innerText="Ходит "+player2[0]+"с фишкой "+player2[1];
+            document.getElementById("currentPlayer").innerText="Ходит "+player2[0]+" с фишкой "+player2[1];
+            document.querySelector("#currentPlayer").style.color="green";
         }else{
-            document.getElementById("currentPlayer").innerText="Ходит "+player1[0]+"с фишкой "+player1[1];
+            document.getElementById("currentPlayer").innerText="Ходит "+player1[0]+" с фишкой "+player1[1];
+            document.querySelector("#currentPlayer").style.color="red";
         }
         numberOfMoves++;
         if(player1[1]===checkWinners()){
@@ -81,9 +82,8 @@ function resetField(winner=""){
 
 function showRecords() {
     (document.getElementById("fieldRecords").style.display === 'table' ? document.getElementById("fieldRecords").style.display = "none" : document.getElementById("fieldRecords").style.display = "table")
-    document.getElementById("fieldRecords").innerHTML="<tr><td>Кто победил</td><td>Восколько</td></tr>";
     for (let i=0;i<localStorage.length;i++){
-        document.getElementById("fieldRecords").innerHTML+="<tr><td>"+localStorage.key(i)+"</td><td>"+localStorage.getItem(localStorage.key(i))+"</td></tr>";
+        document.querySelector("#fieldRecords tbody").innerHTML+="<tr><td>"+localStorage.key(i)+"</td><td>"+localStorage.getItem(localStorage.key(i))+"</td></tr>";
     }
 }
 

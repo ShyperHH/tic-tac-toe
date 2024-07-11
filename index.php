@@ -10,43 +10,80 @@
 
 </head>
 <body>
-    <button id="startRecordingNames" onclick="startRecordingNames()">старт</button>
-    <button id="showRecords" onclick="showRecords()">просмотр результатов</button>
+    <div>
+        <button class="buttonBackPart" id="startRecordingNames" onclick="startRecordingNames()">
+            <div class="buttonFrontPart">
+                старт
+            </div>
+        </button>
+
+        <button class="buttonBackPart" id="showRecords" onclick="showRecords()">
+            <div class="buttonFrontPart">
+                результаты
+            </div>
+        </button>
+    </div>
+
 
     <table id="fieldRecords">
-        <tr>
-            <td>Кто победил</td>
-            <td>Когда победил</td>
-        </tr>
+        <caption>
+            Результаты игры
+        </caption>
+        <thead>
+            <tr>
+                <th>Кто победил</th>
+                <th>Когда победил</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
     </table>
 
-    <label hidden for="input_player1">Первый Игрок
+    <div class="fieldsEnterNames">
         <input type="text" id="input_player1" hidden />
-    </label>
-    <label hidden for="input_player2">Второй игрок
-        <input type="text" id="input_player2" hidden />
-    </label>
+        <label hidden for="input_player1">Первый Игрок</label>
 
-    <input hidden type="Submit" id="startGame" onclick="StartGame()" value="начать игру">
+
+        <input type="text" id="input_player2" hidden />
+        <label hidden for="input_player2">Второй игрок</label>
+
+        <button class="buttonBackPart" hidden id="startGame" onclick="StartGame()" >
+            <div class="buttonFrontPart">
+                Начать игру
+            </div>
+        </button>
+    </div>
+
+
+
     <table id="field">
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <caption>Игровое поле</caption>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
     </table>
     <p id="currentPlayer"></p>
-    <button id="redirectButton" onclick="redirectHome()" >Обратно</button>
+    <button class="buttonBackPart" id="redirectButton" onclick="redirectHome()" >
+        <div class="buttonFrontPart">
+            Обратно
+        </div>
+    </button>
     <script src="/tic-tac-toe/pub/js/main.js"></script>
 
 </body>
